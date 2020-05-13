@@ -9,6 +9,31 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>FINAL EXAM</h1>
+    <header class="head">
+        <h1>Final Exam</h1>
+        <h4>Find all even numbers between two numbers</h4>
+    </header>
+    <main>
+        <div id="numbers" class="form">
+            <div class="inputs">
+                <div class="input">
+                    <label for="name">Number 1: </label>
+                    <input type="number" name="number1" id="number1">
+                </div>
+                <div class="input">
+                    <label for="email">Number 2: </label>
+                    <input type="number" name="number2" id="number2" min="2">
+                </div>
+            </div>
+            <div class="submit">
+              <button>Submit</button>
+            </div>
+        </div>
+        <div id="result">
+            <h2>Calculation Result:</h2>
+            <textarea id="result-text" readonly cols="60" rows="10">
+            </textarea>
+        </div>
+    </main>
 </body>
 </html>

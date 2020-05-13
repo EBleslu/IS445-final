@@ -1,5 +1,15 @@
 const result = document.querySelector('#result-text')
 
+function getEvenNumbers(min, max) {
+    evenNums = [];
+    for (var i = min; i <= max; i++) {
+        if (i % 2 == 0) {
+            evenNums.push(i);
+        }
+    }
+    return evenNums;
+}
+
 function startCalculation() {
     var error = "";
     var val1 = document.getElementById("number1").value;
@@ -21,6 +31,20 @@ function startCalculation() {
         result.innerHTML = error;
     } else {
         result.style.color = "blue";
-        result.innerHTML = "OK";
+        var res;
+        var content;
+        if (num1 < num2) {
+            res = getEvenNumbers(num1, num2);
+        } else {
+            res = getEvenNumbers(num2, num1);
+        }
+        var content = "There are " + res.length.toString() + " even numbers:&#13;&#10;"
+        if (res.length > 0) {
+            content = content + res[0].toString()
+            for (var i = 1; i < res.length; i++) {
+                content = content + "," + res[i].toString()
+            }
+        }
+        result.innerHTML = content;
     }
 }
